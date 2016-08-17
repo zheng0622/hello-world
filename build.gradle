@@ -1,0 +1,21 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.2'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+def getDribbbleAccessToken(){
+    def Properties props = new Properties()
+    props.load(new FileInputStream(new File('secrets.properties')))
+    return props['DRIBBBLE_ACCESS_TOKEN']
+}
